@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
             'no_hp' => '081359528944',
             'wa' => '081359528944',
             'pin' => 'PIN',
-            'jenis_user_id' => 1, // Pastikan ini sesuai dengan ID yang ada di jenis_users
+            'jenis_user_id' => 1,
         ]);
 
         User::create([
@@ -34,7 +34,7 @@ class UserSeeder extends Seeder
             'no_hp' => '081359528945',
             'wa' => '081359528945',
             'pin' => 'PIN',
-            'jenis_user_id' => 2, // Pastikan ini sesuai dengan ID yang ada di jenis_users
+            'jenis_user_id' => 2,
         ]);
 
         User::create([
@@ -44,7 +44,7 @@ class UserSeeder extends Seeder
             'no_hp' => '081359528946',
             'wa' => '081359528946',
             'pin' => 'PIN',
-            'jenis_user_id' => 3, // Pastikan ini sesuai dengan ID yang ada di jenis_users
+            'jenis_user_id' => 3,
         ]);
     }
 }

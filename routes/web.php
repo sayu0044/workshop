@@ -4,6 +4,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\JenisUserController;
+use App\Http\Controllers\MenuController;
+use App\Http\Controllers\SettingMenuController;
 use App\Http\Controllers\KategoriBukuController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -14,16 +16,15 @@ Route::get('/register', [LoginController::class, 'indexregister'])->name('regist
 Route::post('/register', [LoginController::class, 'register']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-// User Page Route
 Route::get('/', function () {
-    return view('userpage.welcome');
+    return view('userpage.index');
 })->name('userpage');
 
-Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware(['auth', 'admin', 'check.menu.access'])->group(function () {
     Route::prefix('dashboard')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-
-        // Rute untuk buku, kategori_buku, users, dan jenis_user
+        Route::resource('menu', MenuController::class);
+        Route::resource('setting_menus', SettingMenuController::class);
         Route::resource('buku', BukuController::class);
         Route::resource('kategori_buku', KategoriBukuController::class);
         Route::resource('users', UserController::class);
