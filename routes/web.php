@@ -19,12 +19,14 @@ Route::get('/', function () {
     return view('userpage.welcome');
 })->name('userpage');
 
-Route::middleware(['auth', 'admin',])->group(function () {
+Route::middleware(['auth', 'admin'])->group(function () {
     Route::prefix('dashboard')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+        // Rute untuk buku, kategori_buku, users, dan jenis_user
+        Route::resource('buku', BukuController::class);
+        Route::resource('kategori_buku', KategoriBukuController::class);
+        Route::resource('users', UserController::class);
+        Route::resource('jenis_user', JenisUserController::class);
     });
-    Route::resource('buku', BukuController::class);
-    Route::resource('kategori_buku', KategoriBukuController::class);
-    Route::resource('users', UserController::class);
-    Route::resource('jenis_user', JenisUserController::class);
 });

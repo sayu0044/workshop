@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('jenis_user', function (Blueprint $table) {
+        Schema::create('jenis_users', function (Blueprint $table) {
             $table->id();
-            $table->string(column: 'nama_jenis_user');
+            $table->string('nama_jenis_user'); // Nama jenis pengguna
             $table->timestamps();
         });
     }
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('jenis_user');
+        Schema::dropIfExists('jenis_users'); // Perbaiki nama tabel di sini
     }
 };
