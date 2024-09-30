@@ -35,7 +35,6 @@
     <script src="{{ asset('assets2/mail/jqBootstrapValidation.min.js') }}"></script>
     <script src="{{ asset('assets2/mail/contact.js') }}"></script>
     <script src="{{ asset('assets2/js/main.js') }}"></script>
-
 </body>
 
 </html>

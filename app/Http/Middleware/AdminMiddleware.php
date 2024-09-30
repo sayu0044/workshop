@@ -17,3 +17,4 @@ class AdminMiddleware
         return redirect('/');
     }
 }
+  

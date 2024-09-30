@@ -1,3 +1,4 @@
+
 @extends('dashboard.layout.main')
 @section('container')
     <div class="main-panel">
@@ -12,4 +13,4 @@
                 </div>
             </div>
         </div>
-    @endsection
+@endsection

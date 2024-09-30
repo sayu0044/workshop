@@ -32,7 +32,7 @@
                                 style="display:inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="form-group button">Hapus</button>
+                                <button type="submit" class="button">Hapus</button>
                             </form>
                         </td>
                     </tr>

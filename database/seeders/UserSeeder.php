@@ -46,5 +46,7 @@ class UserSeeder extends Seeder
             'pin' => 'PIN',
             'jenis_user_id' => 3,
         ]);
+
+        
     }
 }
