@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(JenisUserSeeder::class);
         $this->call(MenuSeeder::class);
+        $this->call(MessageKategoriSeeder::class);
         $this->call(SettingMenuSeeder::class);
         $this->call(UserSeeder::class);
     }

@@ -9,24 +9,28 @@ class Message extends Model
 {
     use HasFactory;
 
-    // Tabel yang digunakan oleh model ini
-    protected $table = 'messages';
-
-    // Kolom yang bisa diisi secara massal
     protected $fillable = [
-        'sender',
-        'message_reference',
-        'subject',
-        'message_text',
-        'message_status',
-        'create_by',
-        'delete_mark',
-        'update_by',
+        'sender', 'message_text', 'message_kategori_id', 'create_by', 'file'
     ];
 
-    // Relasi ke penerima pesan (optional jika diperlukan)
-    public function to()
+    public function messageTo()
     {
-        return $this->hasMany(MessageTo::class, 'message_id', 'id');
+        return $this->hasOne(MessageTo::class, 'message_id');
     }
+
+    public function kategori()
+    {
+        return $this->belongsTo(MessageKategori::class, 'message_kategori_id');
+    }
+public function replies()
+{
+    return $this->hasMany(Message::class, 'replied_to');
+}
+
+public function repliedTo()
+{
+    return $this->belongsTo(Message::class, 'replied_to');
+}
+
+
 }

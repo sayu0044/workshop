@@ -48,12 +48,12 @@ class CheckMenuAccess
             'buku.index' => 4,
             'users.index' => 5,
             'jenis_user.index' => 6,
+            'messages.index' => 7,     // Tambahkan untuk Inbox
+            'messages.sent' => 8,      // Tambahkan untuk Sent Messages
         ];
 
         $routeName = $request->route()->getName();
 
         return $routeMenuMapping[$routeName] ?? null;
     }
-
-  
 }

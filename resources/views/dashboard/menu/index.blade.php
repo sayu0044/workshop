@@ -5,15 +5,14 @@
         <h1 class="page-heading">Daftar Menu</h1>
 
         @if (auth()->user()->jenis_user_id == 1)
-            <!-- Check if the user is an admin -->
-            <a class="button-link" href="{{ route('menu.create') }}">Tambah Menu</a>
+            <a class="btn btn-primary mb-3" href="{{ route('menu.create') }}">Tambah Menu</a>
         @endif
 
         @if (session('success'))
             <p class="success-message">{{ session('success') }}</p>
         @endif
 
-        <table class="custom-table">
+        <table class="table table-striped table-hover table-bordered custom-table">
             <thead>
                 <tr>
                     <th>Nama Menu</th>
@@ -30,15 +29,13 @@
                         <td>{{ $menu->icon_menu ?? 'Tidak Ada Icon' }}</td>
                         <td>
                             @if (auth()->user()->jenis_user_id == 1)
-                                <!-- Check if the user is an admin -->
-                                <a class="button-link" href="{{ route('menu.edit', $menu->id) }}">Edit</a>
+                                <a class="btn btn-primary btn-sm" href="{{ route('menu.edit', $menu->id) }}">Edit</a>
                                 <form action="{{ route('menu.destroy', $menu->id) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="form-group button">Hapus</button>
+                                    <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
                                 </form>
                             @else
-                                <!-- Optionally, show a message or disable buttons for non-admin users -->
                                 <span>Access Denied</span>
                             @endif
                         </td>

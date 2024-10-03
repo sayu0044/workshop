@@ -8,16 +8,15 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('message_tos', function (Blueprint $table) {
+        Schema::create('message_kategori', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('message_id')->constrained('messages')->onDelete('cascade');
-            $table->string('receiver');
+            $table->string('nama_kategori');
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('message_tos');
+        Schema::dropIfExists('message_kategori');
     }
 };

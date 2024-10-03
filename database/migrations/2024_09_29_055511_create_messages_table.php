@@ -14,10 +14,9 @@ return new class extends Migration
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
             $table->string('sender');
-            $table->string('message_reference')->nullable();
-            $table->string('subject');
-            $table->string('message_text');
-            $table->string('message_status')->nullable();
+            $table->foreignId('message_kategori_id')->constrained('message_kategori')->onDelete('cascade');
+            $table->text('message_text');
+            $table->string('file')->nullable();
             $table->string('create_by');
             $table->string('delete_mark', 1)->nullable();
             $table->string('update_by')->nullable();

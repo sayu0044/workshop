@@ -3,7 +3,7 @@
 @section('container')
     <div class="container">
         <h1 class="page-heading">Daftar Pengguna</h1>
-        <a class="button-link" href="{{ route('users.create') }}">Tambah Pengguna</a>
+        <a class="btn btn-primary mb-3" href="{{ route('users.create') }}">Tambah Pengguna</a>
 
         @if (session('success'))
             <p class="success-message">{{ session('success') }}</p>
@@ -19,7 +19,7 @@
             </div>
         @endif
 
-        <table class="custom-table">
+        <table class="table table-striped table-hover table-bordered custom-table">
             <thead>
                 <tr>
                     <th>Nama</th>
@@ -41,11 +41,11 @@
                         <td>{{ $user->pin }}</td>
                         <td>{{ $user->jenisUser->nama_jenis_user }}</td>
                         <td>
-                            <a class="button-link" href="{{ route('users.edit', $user->id) }}">Edit</a>
+                            <a class="btn btn-primary btn-sm" href="{{ route('users.edit', $user->id) }}">Edit</a>
                             <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="form-group button">Hapus</button>
+                                <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
                             </form>
                         </td>
                     </tr>

@@ -3,13 +3,13 @@
 @section('container')
     <div class="container">
         <h1 class="page-heading">Daftar Pengaturan Menu</h1>
-        <a class="button-link" href="{{ route('setting_menus.create') }}">Tambah Pengaturan Menu</a>
+        <a class="btn btn-primary mb-3" href="{{ route('setting_menus.create') }}">Tambah Pengaturan Menu</a>
 
         @if (session('success'))
             <p class="success-message">{{ session('success') }}</p>
         @endif
 
-        <table class="custom-table">
+        <table class="table table-striped table-hover table-bordered custom-table">
             <thead>
                 <tr>
                     <th>Jenis User</th>
@@ -21,18 +21,14 @@
                 @foreach ($settingMenus as $setting)
                     <tr>
                         <td>{{ $setting->jenisUser->nama_jenis_user }}</td>
-                        <!-- Pastikan ini sesuai dengan field di model JenisUser -->
+                        <td>{{ $setting->menu->nama_menu ?? 'Tidak ada menu' }}</td>
                         <td>
-                            {{ $setting->menu->nama_menu ?? 'Tidak ada menu' }}
-                            <!-- Menggunakan null coalescing operator -->
-                        </td>
-                        <td>
-                            <a class="button-link" href="{{ route('setting_menus.edit', $setting->id) }}">Edit</a>
+                            <a class="btn btn-primary btn-sm" href="{{ route('setting_menus.edit', $setting->id) }}">Edit</a>
                             <form action="{{ route('setting_menus.destroy', $setting->id) }}" method="POST"
                                 style="display:inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="button">Hapus</button>
+                                <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
                             </form>
                         </td>
                     </tr>
