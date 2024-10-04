@@ -19,22 +19,31 @@ class SettingMenuSeeder extends Seeder
             ['jenis_user_id' => 1, 'menu_id' => 4],
             ['jenis_user_id' => 1, 'menu_id' => 5],
             ['jenis_user_id' => 1, 'menu_id' => 6],
-            ['jenis_user_id' => 1, 'menu_id' => 7],  // Akses ke inbox
-            ['jenis_user_id' => 1, 'menu_id' => 8],  // Akses ke pesan terkirim (sent)
+            ['jenis_user_id' => 1, 'menu_id' => 7],
+            ['jenis_user_id' => 1, 'menu_id' => 8],
+            ['jenis_user_id' => 1, 'menu_id' => 9],
+            ['jenis_user_id' => 1, 'menu_id' => 10],  // Akses ke Informasi Gempa
+            ['jenis_user_id' => 1, 'menu_id' => 11],  // Akses ke Informasi Map
 
             // Akses untuk User (jenis_user_id = 2)
             ['jenis_user_id' => 2, 'menu_id' => 1],
             ['jenis_user_id' => 2, 'menu_id' => 3],
             ['jenis_user_id' => 2, 'menu_id' => 4],
-            ['jenis_user_id' => 2, 'menu_id' => 7],  // Akses ke inbox
-            ['jenis_user_id' => 2, 'menu_id' => 8],  // Akses ke pesan terkirim (sent)
+            ['jenis_user_id' => 2, 'menu_id' => 7],
+            ['jenis_user_id' => 2, 'menu_id' => 8],
+            ['jenis_user_id' => 2, 'menu_id' => 9],
+            ['jenis_user_id' => 2, 'menu_id' => 10],  // Akses ke Informasi Gempa
+            ['jenis_user_id' => 2, 'menu_id' => 11],  // Akses ke Informasi Map
 
             // Akses untuk Mahasiswa (jenis_user_id = 3)
             ['jenis_user_id' => 3, 'menu_id' => 1],
             ['jenis_user_id' => 3, 'menu_id' => 3],
             ['jenis_user_id' => 3, 'menu_id' => 4],
-            ['jenis_user_id' => 3, 'menu_id' => 7],  // Akses ke inbox
-            ['jenis_user_id' => 3, 'menu_id' => 8],  // Akses ke pesan terkirim (sent)
+            ['jenis_user_id' => 3, 'menu_id' => 7],
+            ['jenis_user_id' => 3, 'menu_id' => 8],
+            ['jenis_user_id' => 3, 'menu_id' => 9],
+            ['jenis_user_id' => 3, 'menu_id' => 10],  // Akses ke Informasi Gempa
+            ['jenis_user_id' => 3, 'menu_id' => 11],  // Akses ke Informasi Map
         ]);
     }
 }

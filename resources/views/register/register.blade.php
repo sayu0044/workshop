@@ -6,19 +6,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Login & Register</title>
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="../../assets/vendors/feather/feather.css">
-    <link rel="stylesheet" href="../../assets/vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="../../assets/vendors/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
-    <!-- endinject -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <!-- SweetAlert CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/vendors/feather/feather.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendors/ti-icons/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendors/css/vendor.bundle.base.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendors/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendors/mdi/css/materialdesignicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" />
 </head>
 
 <body>
@@ -29,31 +24,30 @@
                     <div class="col-lg-4 mx-auto">
                         <div class="auth-form-light text-left py-5 px-4 px-sm-5">
                             <div class="brand-logo">
-                                <img src="../../assets/images/logo.svg" alt="logo">
+                                <img src="{{ asset('assets/images/logo.svg') }}" alt="logo">
                             </div>
 
-                            <!-- Combined Login and Register Form -->
                             <h4>Login & Register</h4>
 
-                            <!-- Register Form -->
                             <form action="/register" method="POST" class="mt-4">
                                 @csrf
                                 <h4>Register Form</h4>
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-lg" name="name"
-                                        placeholder="Name" required>
+                                        placeholder="Name" autocomplete="off" required>
                                 </div>
                                 <div class="form-group">
                                     <input type="email" class="form-control form-control-lg" name="email"
-                                        placeholder="Email (For Register)" required>
+                                        placeholder="Email (For Register)" autocomplete="off" required>
                                 </div>
                                 <div class="form-group">
                                     <input type="password" class="form-control form-control-lg" name="password"
-                                        placeholder="Password (For Register)" required>
+                                        placeholder="Password (For Register)" autocomplete="off" required>
                                 </div>
                                 <div class="form-group">
                                     <input type="password" class="form-control form-control-lg"
-                                        name="password_confirmation" placeholder="Confirm Password" required>
+                                        name="password_confirmation" placeholder="Confirm Password" autocomplete="off"
+                                        required>
                                 </div>
                                 <div class="mt-3 d-grid gap-2">
                                     <button type="submit"
@@ -71,23 +65,14 @@
                     </div>
                 </div>
             </div>
-            <!-- content-wrapper ends -->
         </div>
-        <!-- page-body-wrapper ends -->
     </div>
-
-    <!-- SweetAlert JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
-    <!-- plugins:js -->
-    <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- inject:js -->
-    <script src="../../assets/js/off-canvas.js"></script>
-    <script src="../../assets/js/template.js"></script>
-    <script src="../../assets/js/settings.js"></script>
-    <script src="../../assets/js/todolist.js"></script>
-    <!-- endinject -->
+    <script src="{{ asset('assets/vendors/js/vendor.bundle.base.js') }}"></script>
+    <script src="{{ asset('assets/js/off-canvas.js') }}"></script>
+    <script src="{{ asset('assets/js/template.js') }}"></script>
+    <script src="{{ asset('assets/js/settings.js') }}"></script>
+    <script src="{{ asset('assets/js/todolist.js') }}"></script>
 </body>
 
 </html>

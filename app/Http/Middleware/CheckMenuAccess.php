@@ -9,27 +9,17 @@ use App\Models\SettingMenu;
 
 class CheckMenuAccess
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @return mixed
-     */
     public function handle(Request $request, Closure $next)
     {
         $user = Auth::user();
 
-        // Get the menu_id from the current route
         $menuId = $this->getMenuIdFromRoute($request);
 
         if ($menuId) {
-            // Check if the user has access to the menu based on menu_id
             $hasAccess = SettingMenu::where('jenis_user_id', $user->jenis_user_id)
                 ->where('menu_id', $menuId)
                 ->exists();
 
-            // If access is denied, redirect or abort
             if (!$hasAccess) {
                 return redirect()->route('dashboard')->with('error', 'You do not have access to this menu.');
             }
@@ -40,7 +30,6 @@ class CheckMenuAccess
 
     private function getMenuIdFromRoute(Request $request)
     {
-        // Define your route to menu_id mapping
         $routeMenuMapping = [
             'menu.index' => 1,
             'setting_menus.index' => 2,
@@ -48,8 +37,11 @@ class CheckMenuAccess
             'buku.index' => 4,
             'users.index' => 5,
             'jenis_user.index' => 6,
-            'messages.index' => 7,     // Tambahkan untuk Inbox
-            'messages.sent' => 8,      // Tambahkan untuk Sent Messages
+            'inbox' => 7,
+            'sent' => 8,
+            'postingan.index' => 9,  // Akses ke Postingan
+            'gempa' => 10,  // Akses ke Informasi Gempa
+            'map' => 11,  // Akses ke Informasi Map
         ];
 
         $routeName = $request->route()->getName();

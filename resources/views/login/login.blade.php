@@ -32,7 +32,7 @@
                                 @csrf
                                 <div class="form-group">
                                     <input type="email" class="form-control form-control-lg" name="email"
-                                        placeholder="Email (For Login)" required>
+                                        placeholder="Email (For Login)" autocomplete="off" required>
                                 </div>
                                 <div class="form-group">
                                     <input type="password" class="form-control form-control-lg" name="password"
@@ -58,13 +58,11 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
     <script src="{{ asset('assets/vendors/js/vendor.bundle.base.js') }}"></script>
     <script src="{{ asset('assets/js/off-canvas.js') }}"></script>
     <script src="{{ asset('assets/js/template.js') }}"></script>
     <script src="{{ asset('assets/js/settings.js') }}"></script>
     <script src="{{ asset('assets/js/todolist.js') }}"></script>
-    <!-- endinject -->
 </body>
 
 </html>

@@ -12,6 +12,7 @@ use App\Models\KategoriBuku;
 use App\Models\User;
 use App\Models\SettingMenu;
 use App\Models\JenisUser;
+use App\Models\Postingan; // Import the Postingan model
 
 class DashboardController extends Controller
 {
@@ -29,6 +30,7 @@ class DashboardController extends Controller
         $totalMenus = Menu::count();
         $totalSettingMenus = SettingMenu::count();
         $totalJenisUsers = JenisUser::count();
+        $totalPostingan = Postingan::count(); // Adding Postingan statistics
 
         // Data Menu
         $menus = Menu::whereHas('settingMenus', function ($query) use ($user) {
@@ -46,7 +48,8 @@ class DashboardController extends Controller
             'totalMenus',
             'totalSettingMenus',
             'totalJenisUsers',
-            'totalUnreadMessages'
+            'totalUnreadMessages',
+            'totalPostingan' // Pass totalPostingan to the view
         ));
     }
 }

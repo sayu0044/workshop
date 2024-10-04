@@ -1,5 +1,4 @@
 <?php
-
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
@@ -20,6 +19,10 @@ class MenuSeeder extends Seeder
             ['id' => 6, 'nama_menu' => 'Manajemen Jenis User', 'link_menu' => 'jenis_user', 'icon_menu' => 'fas fa-user-cog'],
             ['id' => 7, 'nama_menu' => 'Inbox', 'link_menu' => 'inbox', 'icon_menu' => 'fas fa-inbox'],
             ['id' => 8, 'nama_menu' => 'Pesan Terkirim', 'link_menu' => 'sent', 'icon_menu' => 'fas fa-paper-plane'],
+            ['id' => 9, 'nama_menu' => 'Postingan', 'link_menu' => 'postingan', 'icon_menu' => 'fas fa-edit'],
+            ['id' => 10, 'nama_menu' => 'Informasi Gempa', 'link_menu' => 'gempa', 'icon_menu' => 'fas fa-exclamation-triangle'], // Menambahkan Informasi Gempa
+            ['id' => 11, 'nama_menu' => 'Informasi Map', 'link_menu' => 'map', 'icon_menu' => 'fas fa-map'], // Menambahkan Informasi Map
         ]);
     }
 }
+

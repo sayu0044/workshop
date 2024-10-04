@@ -13,15 +13,18 @@
             <li class="nav-item nav-profile dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
                     <img src="{{ asset('assets/images/faces/mee.jpeg') }}" alt="profile" />
+                    <!-- Tambahkan nama user di sebelah gambar profil -->
+                    <span class="nav-profile-name">{{ Auth::user()->name }}</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                    <!-- Menampilkan nama user di dalam dropdown juga jika diperlukan -->
+                    <h6 class="dropdown-header">{{ Auth::user()->name }}</h6>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
                         @csrf
                         <button type="submit" class="dropdown-item">
                             <i class="ti-power-off text-primary"></i> Logout
                         </button>
                     </form>
-
                 </div>
             </li>
             <li class="nav-item nav-settings d-none d-lg-flex">
